@@ -24,6 +24,19 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "network": {
+        "default": "sepolia",
+        "sepolia": {
+          "chainId": 11155111,
+          "rpc": "https://sepolia.infura.io/v3/${INFURA_API_KEY}"
+        },
+        "mainnet": {
+          "chainId": 1,
+          "rpc": "https://mainnet.infura.io/v3/${INFURA_API_KEY}"
+        }
+      }
     }
   }
 }
