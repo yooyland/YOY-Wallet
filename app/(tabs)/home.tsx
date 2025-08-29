@@ -168,25 +168,6 @@ export default function Home() {
 
   return (
     <ScrollView style={{ flex: 1, backgroundColor: '#000000' }}>
-      {/* Status Bar */}
-      <View style={{ 
-        height: 44, 
-        backgroundColor: '#000000',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        paddingHorizontal: 20
-      }}>
-        <Text style={{ color: '#FFFFFF', fontSize: 16, fontWeight: 'bold' }}>
-          {new Date().toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' })}
-        </Text>
-        <View style={{ flexDirection: 'row', gap: 4 }}>
-          <View style={{ width: 20, height: 12, backgroundColor: '#FFFFFF', borderRadius: 2 }} />
-          <View style={{ width: 16, height: 12, backgroundColor: '#FFFFFF', borderRadius: 2 }} />
-          <View style={{ width: 24, height: 12, backgroundColor: '#FFFFFF', borderRadius: 2 }} />
-        </View>
-      </View>
-
       {/* Header */}
       <View style={{ 
         flexDirection: 'row', 
