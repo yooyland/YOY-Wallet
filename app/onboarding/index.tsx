@@ -1,6 +1,8 @@
 import { Link, router } from 'expo-router';
-import { View, Text, Pressable } from 'react-native';
+import { View, Text, Pressable, Dimensions } from 'react-native';
 import { useState } from 'react';
+
+const { width, height } = Dimensions.get('window');
 
 export default function Onboarding() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -10,19 +12,22 @@ export default function Onboarding() {
       step: 1,
       title: "Exchange, Buy & Sell YooY Land World!",
       description: "Easily buy Bitcoin and other cryptocurrencies using a wide range of payment options",
-      logo: "YooY Land"
+      logo: "YooY Land",
+      backgroundColor: "#000000"
     },
     {
       step: 2,
       title: "Track Value Change Each Digital Currency",
       description: "For each digital currency, there is information about its current market cap, price, 24-hour trading volume",
-      logo: "YooY Coin"
+      logo: "YooY Coin",
+      backgroundColor: "#000000"
     },
     {
       step: 3,
       title: "Collect, Sell & Buy Digital Arts",
       description: "Discover exclusive digital collectibles and their non-fungible tokens using InCrypto today",
-      logo: "YooY NFT"
+      logo: "YooY NFT",
+      backgroundColor: "#000000"
     }
   ];
 
@@ -32,18 +37,16 @@ export default function Onboarding() {
     if (currentStep < 3) {
       setCurrentStep(currentStep + 1);
     } else {
-      // 마지막 단계에서 지갑 선택 화면으로 이동
       router.push('/onboarding/wallet-select');
     }
   };
 
   const handleSkip = () => {
-    // 지갑 선택 화면으로 이동
     router.push('/onboarding/wallet-select');
   };
 
   return (
-    <View style={{ flex: 1, backgroundColor: '#000000' }}>
+    <View style={{ flex: 1, backgroundColor: currentData.backgroundColor }}>
       {/* Status Bar */}
       <View style={{ 
         height: 44, 
@@ -72,7 +75,9 @@ export default function Onboarding() {
             backgroundColor: currentStep === 1 ? 'transparent' : '#FFD700',
             justifyContent: 'center',
             alignItems: 'center',
-            marginBottom: 40
+            marginBottom: 40,
+            borderWidth: currentStep === 1 ? 2 : 0,
+            borderColor: '#FFD700'
           }}>
             {currentStep === 1 ? (
               <View style={{ alignItems: 'center' }}>
