@@ -1,5 +1,5 @@
 import { router } from 'expo-router';
-import { View, Text, TextInput, Pressable, Alert, ScrollView, useState } from 'react-native';
+import { View, Text, TextInput, Pressable, Alert, ScrollView } from 'react-native';
 import { useState } from 'react';
 import { ethers } from 'ethers';
 import { validateMnemonic } from '../services/mnemonic';
